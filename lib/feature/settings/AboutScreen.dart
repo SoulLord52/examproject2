@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
+
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
 
@@ -16,7 +18,7 @@ class _AboutScreenState extends State<AboutScreen> {
       title: Text(
         "About",
         style: GoogleFonts.acme(
-          color: Colors.black,
+          color: AppColors.black,
           fontWeight: FontWeight.bold,
           fontSize: 22,
         ),
@@ -28,7 +30,7 @@ class _AboutScreenState extends State<AboutScreen> {
           icon: Icon(
             Icons.arrow_back_ios_new_outlined,
             size: 24,
-            color: Colors.black,
+            color: AppColors.black,
           ),
         ),
       ),
@@ -52,7 +54,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 style: GoogleFonts.workSans(
                   fontSize: 20,
                   height: 1.5,
-                  color: Colors.black87,
+                  color: AppColors.black,
                 ),
               ),
               SizedBox(height: 10,),
@@ -70,7 +72,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 style: GoogleFonts.workSans(
                   fontSize: 20,
                   height: 1.5,
-                  color: Colors.black87,
+                  color: AppColors.black,
                 ),
               ),
             ],

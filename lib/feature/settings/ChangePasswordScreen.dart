@@ -2,6 +2,7 @@ import 'package:examproject2/feature/homescreen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
 import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
 
@@ -20,7 +21,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         title: Text(
           "Account",
           style: GoogleFonts.acme(
-            color: Colors.black,
+            color: AppColors.black,
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
@@ -33,7 +34,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             child: Text(
               "SAVE",
               style: GoogleFonts.workSans(
-                color: Colors.black,
+                color: AppColors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
               ),
@@ -48,7 +49,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           icon: Icon(
             Icons.arrow_back_ios_new_outlined,
             size: 24,
-            color: Colors.black,
+            color: AppColors.black,
           ),
         ),
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
+
 class TermsConditionsScreen extends StatefulWidget {
   const TermsConditionsScreen({super.key});
 
@@ -16,7 +18,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
         title: Text(
           "Terms & Conditions",
           style: GoogleFonts.acme(
-            color: Colors.black,
+            color: AppColors.black,
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
@@ -28,7 +30,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
           icon: Icon(
             Icons.arrow_back_ios_new_outlined,
             size: 24,
-            color: Colors.black,
+            color: AppColors.black,
           ),
         ),
       ),
@@ -52,7 +54,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                 style: GoogleFonts.workSans(
                   fontSize: 16,
                   height: 1.5,
-                  color: Colors.black87,
+                  color: AppColors.black,
                 ),
               ),
               SizedBox(height: 10,),
@@ -70,7 +72,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                 style: GoogleFonts.workSans(
                   fontSize: 18,
                   height: 1.5,
-                  color: Colors.black87,
+                  color: AppColors.black,
                 ),
               ),
             ],

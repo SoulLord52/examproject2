@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
+
 class CustomInputWidget extends StatefulWidget {
   const CustomInputWidget({
     super.key,
@@ -25,9 +27,9 @@ class _CustomInputWidgetState extends State<CustomInputWidget> {
     return TextFormField(
       obscureText: widget.isPassword ? !isPasswordVisible : false,
       controller: widget.controller,
-      cursorColor: Colors.blueAccent,
+      cursorColor: AppColors.blueAccent,
       cursorWidth: 2,
-      cursorErrorColor: Colors.red,
+      cursorErrorColor: AppColors.red,
       decoration: InputDecoration(
         suffixIcon: widget.isPassword
             ? IconButton(
@@ -41,22 +43,22 @@ class _CustomInputWidgetState extends State<CustomInputWidget> {
                 },
               )
             : null,
-        suffixIconColor: Colors.black,
+        suffixIconColor: AppColors.black,
         labelText: widget.labelText,
         labelStyle: GoogleFonts.workSans(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Colors.grey,
+          color: AppColors.grey,
         ),
-        disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+        disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: AppColors.grey,)),
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: AppColors.grey,),
         ),
         errorBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.red),
+          borderSide: BorderSide(color: AppColors.red,),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.black),
+          borderSide: BorderSide(color: AppColors.black,),
         ),
       ),
     );

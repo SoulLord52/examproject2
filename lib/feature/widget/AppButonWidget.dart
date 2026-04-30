@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
+
 class AppButton extends StatelessWidget {
   const AppButton({super.key, required this.text, required this.onPressed});
 
@@ -11,7 +13,7 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.black,
+        backgroundColor: AppColors.black,
         fixedSize: Size(150, 45),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
@@ -21,7 +23,7 @@ class AppButton extends StatelessWidget {
       child: Text(
         text,
         style: GoogleFonts.acme(
-          color: Colors.white,
+          color: AppColors.white,
           fontSize: 18,
         ),
       ),

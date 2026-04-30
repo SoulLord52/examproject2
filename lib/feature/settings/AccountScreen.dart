@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
 import '../widget/AppRouter.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _AccountScreenState extends State<AccountScreen> {
         title: Text(
           "Account",
           style: GoogleFonts.acme(
-            color: Colors.black,
+            color: AppColors.black,
             fontWeight: FontWeight.bold,
             fontSize: 24,
           ),
@@ -33,7 +34,7 @@ class _AccountScreenState extends State<AccountScreen> {
           icon: Icon(
             Icons.arrow_back_ios_new_outlined,
             size: 24,
-            color: Colors.black,
+            color: AppColors.black,
           ),
         ),
       ),
@@ -43,12 +44,12 @@ class _AccountScreenState extends State<AccountScreen> {
           children: [
             Row(
               children: [
-                Icon(CupertinoIcons.mail, size: 24, color: Colors.black),
+                Icon(CupertinoIcons.mail, size: 24, color: AppColors.black,),
                 SizedBox(width: 10),
                 Text(
                   GetStorage().read("email"),
                   style: GoogleFonts.workSans(
-                    color: Colors.black,
+                    color: AppColors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
@@ -59,7 +60,7 @@ class _AccountScreenState extends State<AccountScreen> {
             Container(
               width: double.infinity,
               height: 2,
-              color: Colors.grey.shade300,
+              color: AppColors.grey300,
             ),
             SizedBox(height: 15),
             InkWell(
@@ -68,12 +69,12 @@ class _AccountScreenState extends State<AccountScreen> {
               },
               child: Row(
                 children: [
-                  Icon(CupertinoIcons.lock, size: 24, color: Colors.black),
+                  Icon(CupertinoIcons.lock, size: 24, color: AppColors.black,),
                   SizedBox(width: 10),
                   Text(
                     "Change Password",
                     style: GoogleFonts.workSans(
-                      color: Colors.black,
+                      color: AppColors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
@@ -82,7 +83,7 @@ class _AccountScreenState extends State<AccountScreen> {
                   Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: 20,
-                    color: Colors.grey,
+                    color: AppColors.grey,
                   ),
                 ],
               ),

@@ -2,6 +2,7 @@ import 'package:examproject2/feature/homescreen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
 import '../widget/AppButonWidget.dart';
 import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
@@ -42,7 +43,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               "             Enter your email\nto be sent a reset password link.",
               style: GoogleFonts.workSans(
                 fontSize: 18,
-                color: Colors.black,
+                color: AppColors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),

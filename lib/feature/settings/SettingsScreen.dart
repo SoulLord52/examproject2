@@ -1,12 +1,9 @@
-import 'package:examproject2/feature/authentification/Login.dart';
-import 'package:examproject2/feature/settings/AboutScreen.dart';
-import 'package:examproject2/feature/settings/AccountScreen.dart';
-import 'package:examproject2/feature/settings/TermsConditionsScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
 import '../widget/AppRouter.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -26,7 +23,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         title: Text(
           "Settings",
           style: GoogleFonts.acme(
-            color: Colors.black,
+            color: AppColors.black,
             fontWeight: FontWeight.bold,
             fontSize: 24,
           ),
@@ -42,12 +39,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               },
               child: Row(
                 children: [
-                  Icon(CupertinoIcons.person, size: 20, color: Colors.black),
+                  Icon(CupertinoIcons.person, size: 20, color: AppColors.black,),
                   SizedBox(width: 10),
                   Text(
                     "Account",
                     style: GoogleFonts.workSans(
-                      color: Colors.black,
+                      color: AppColors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
@@ -56,7 +53,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: 20,
-                    color: Colors.grey,
+                    color: AppColors.grey,
                   ),
                 ],
               ),
@@ -65,17 +62,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Container(
               width: double.infinity,
               height: 2,
-              color: Colors.grey.shade300,
+              color: AppColors.grey300,
             ),
             SizedBox(height: 10),
             Row(
               children: [
-                Icon(CupertinoIcons.bell, size: 20, color: Colors.black),
+                Icon(CupertinoIcons.bell, size: 20, color: AppColors.black,),
                 SizedBox(width: 10),
                 Text(
                   "Push Notifications",
                   style: GoogleFonts.workSans(
-                    color: Colors.black,
+                    color: AppColors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
@@ -88,10 +85,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       notificationsEnabled = value;
                     });
                   },
-                  activeColor: Colors.white,
-                  activeTrackColor: Colors.black,
-                  inactiveThumbColor: Colors.white,
-                  inactiveTrackColor: Colors.grey.shade300,
+                  activeColor: AppColors.white,
+                  activeTrackColor: AppColors.black,
+                  inactiveThumbColor: AppColors.white,
+                  inactiveTrackColor: AppColors.grey300,
                 ),
               ],
             ),
@@ -99,7 +96,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Container(
               width: double.infinity,
               height: 2,
-              color: Colors.grey.shade300,
+              color: AppColors.grey300,
             ),
             SizedBox(height: 10),
             InkWell(
@@ -111,13 +108,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icon(
                     CupertinoIcons.question_circle,
                     size: 20,
-                    color: Colors.black,
+                    color: AppColors.black,
                   ),
                   SizedBox(width: 10),
                   Text(
                     "Terms & Conditions",
                     style: GoogleFonts.workSans(
-                      color: Colors.black,
+                      color: AppColors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
@@ -126,7 +123,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: 20,
-                    color: Colors.grey,
+                    color: AppColors.grey,
                   ),
                 ],
               ),
@@ -135,7 +132,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Container(
               width: double.infinity,
               height: 2,
-              color: Colors.grey.shade300,
+              color: AppColors.grey300,
             ),
             SizedBox(height: 10),
             InkWell(
@@ -144,12 +141,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 },
               child: Row(
                 children: [
-                  Icon(CupertinoIcons.info, size: 20, color: Colors.black),
+                  Icon(CupertinoIcons.info, size: 20, color: AppColors.black,),
                   SizedBox(width: 10),
                   Text(
                     "About",
                     style: GoogleFonts.workSans(
-                      color: Colors.black,
+                      color: AppColors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
@@ -158,7 +155,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: 20,
-                    color: Colors.grey,
+                    color: AppColors.grey,
                   ),
                 ],
               ),
@@ -167,7 +164,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Container(
               width: double.infinity,
               height: 2,
-              color: Colors.grey.shade300,
+              color: AppColors.grey300,
             ),
             SizedBox(height: 10),
             InkWell(
@@ -180,13 +177,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icon(
                     CupertinoIcons.square_arrow_right,
                     size: 20,
-                    color: Colors.black,
+                    color: AppColors.black,
                   ),
                   SizedBox(width: 10),
                   Text(
                     "Log out",
                     style: GoogleFonts.workSans(
-                      color: Colors.black,
+                      color: AppColors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),

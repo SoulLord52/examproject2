@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/consts/AppColors.dart';
 import '../widget/AppButonWidget.dart';
 import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
@@ -59,7 +60,7 @@ class _LoginState extends State<Login> {
                 },
                 child: Text(
                   "Forgot Password?",
-                  style: GoogleFonts.workSans(color: Colors.black, fontSize: 16),
+                  style: GoogleFonts.workSans(color: AppColors.black, fontSize: 16),
                 ),
               ),
             ),
