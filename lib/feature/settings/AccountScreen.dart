@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../widget/AppRouter.dart';
+
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
 
@@ -24,7 +26,16 @@ class _AccountScreenState extends State<AccountScreen> {
             fontSize: 24,
           ),
         ),
-        leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back_ios_new_outlined, size: 24, color: Colors.black,)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_new_outlined,
+            size: 24,
+            color: Colors.black,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -52,7 +63,9 @@ class _AccountScreenState extends State<AccountScreen> {
             ),
             SizedBox(height: 15),
             InkWell(
-              onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => ChangePasswordScreen()));},
+              onTap: () {
+                Navigator.pushNamed(context, AppRouter.changePassword);
+              },
               child: Row(
                 children: [
                   Icon(CupertinoIcons.lock, size: 24, color: Colors.black),

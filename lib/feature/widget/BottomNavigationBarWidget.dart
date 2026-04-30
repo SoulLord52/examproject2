@@ -3,14 +3,14 @@ import 'package:examproject2/feature/settings/SettingsScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Bottomnavigationbarwidget extends StatefulWidget {
-  const Bottomnavigationbarwidget({super.key});
+class BottomNavigationBarWidget extends StatefulWidget {
+  const BottomNavigationBarWidget({super.key});
 
   @override
-  State<Bottomnavigationbarwidget> createState() => _BottomnavigationbarwidgetState();
+  State<BottomNavigationBarWidget> createState() => _BottomNavigationBarWidgetState();
 }
 
-class _BottomnavigationbarwidgetState extends State<Bottomnavigationbarwidget> {
+class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
   int _selectedIndex = 0;
 
   late final List<Widget> _pages = [

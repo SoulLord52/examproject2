@@ -1,6 +1,13 @@
+import 'package:examproject2/feature/authentification/ForgotPassword.dart';
 import 'package:examproject2/feature/authentification/Login.dart';
 import 'package:examproject2/feature/homescreen/HomeCubit.dart';
 import 'package:examproject2/feature/homescreen/HomeScreen.dart';
+import 'package:examproject2/feature/settings/AboutScreen.dart';
+import 'package:examproject2/feature/settings/AccountScreen.dart';
+import 'package:examproject2/feature/settings/ChangePasswordScreen.dart';
+import 'package:examproject2/feature/settings/SettingsScreen.dart';
+import 'package:examproject2/feature/settings/TermsConditionsScreen.dart';
+import 'package:examproject2/feature/widget/AppRouter.dart';
 import 'package:examproject2/feature/widget/BottomNavigationBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,12 +28,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: AppRouter.home,
+      routes: {
+        AppRouter.forgotPassword: (context) => ForgotPassword(),
+        AppRouter.home: (context) => HomeScreen(),
+        AppRouter.login: (context) => Login(),
+        AppRouter.settings: (context) => SettingsScreen(),
+        AppRouter.changePassword: (context) => ChangePasswordScreen(),
+        AppRouter.about: (context) => AboutScreen(),
+        AppRouter.account: (context) => AccountScreen(),
+        AppRouter.terms: (context) => TermsConditionsScreen(),
+        AppRouter.bottomNavigation: (context) => BottomNavigationBarWidget(),
+      },
       title: 'News App',
       theme: ThemeData(
         colorScheme: ColorScheme.light(),
         primaryColor: Colors.blueAccent
       ),
-      home: GetStorage().read('email') != null ? Bottomnavigationbarwidget() : Login(),
+      home: GetStorage().read('email') != null ? BottomNavigationBarWidget() : Login(),
       debugShowCheckedModeBanner: false,
     );
   }

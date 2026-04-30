@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widget/AppButonWidget.dart';
+import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -14,11 +15,13 @@ class ForgotPassword extends StatefulWidget {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
   final TextEditingController emailController = TextEditingController();
+
   @override
   void dispose() {
     emailController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,16 +38,29 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               fit: BoxFit.cover,
             ),
             SizedBox(height: 20),
-            Text("             Enter your email\nto be sent a reset password link.", style: GoogleFonts.workSans(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),),
+            Text(
+              "             Enter your email\nto be sent a reset password link.",
+              style: GoogleFonts.workSans(
+                fontSize: 18,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             SizedBox(height: 15),
             CustomInputWidget(
               controller: emailController,
               labelText: 'Enter your email!',
             ),
             SizedBox(height: 50),
-            AppButton(text: 'Reset', onPressed: () {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen()), (_) => false);
-            }
+            AppButton(
+              text: 'Reset',
+              onPressed: () {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  AppRouter.forgotPassword,
+                  (_) => false,
+                );
+              },
             ),
           ],
         ),

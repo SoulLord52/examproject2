@@ -1,11 +1,9 @@
-import 'package:examproject2/feature/authentification/ForgotPassword.dart';
-import 'package:examproject2/feature/homescreen/HomeScreen.dart';
-import 'package:examproject2/feature/widget/BottomNavigationBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widget/AppButonWidget.dart';
+import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
 
 class Login extends StatefulWidget {
@@ -57,10 +55,7 @@ class _LoginState extends State<Login> {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ForgotPassword()),
-                  );
+                  Navigator.pushNamed(context, AppRouter.forgotPassword);
                 },
                 child: Text(
                   "Forgot Password?",
@@ -73,11 +68,7 @@ class _LoginState extends State<Login> {
               text: 'Sign In',
               onPressed: () {
                 box.write('email', emailController.text);
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => Bottomnavigationbarwidget()),
-                  (_) => false,
-                );
+                Navigator.pushNamedAndRemoveUntil(context, AppRouter.home, (_) => false);
               },
             ),
           ],

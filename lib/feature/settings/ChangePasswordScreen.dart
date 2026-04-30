@@ -2,6 +2,7 @@ import 'package:examproject2/feature/homescreen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
@@ -26,16 +27,19 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         ),
         actions: [
           TextButton(
-            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
-            child: Text("SAVE",
-            style: GoogleFonts.workSans(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
-            ),
+            onPressed: () {
+              Navigator.pushNamed(context, AppRouter.home);
+            },
+            child: Text(
+              "SAVE",
+              style: GoogleFonts.workSans(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
+              ),
             ),
           ),
-          SizedBox(width: 10,),
+          SizedBox(width: 10),
         ],
         leading: IconButton(
           onPressed: () {
