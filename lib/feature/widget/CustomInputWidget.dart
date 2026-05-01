@@ -48,7 +48,7 @@ class _CustomInputWidgetState extends State<CustomInputWidget> {
         labelStyle: GoogleFonts.workSans(
           fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: AppColors.grey,
+          color: AppColors.grey2,
         ),
         disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: AppColors.grey,)),
         border: UnderlineInputBorder(

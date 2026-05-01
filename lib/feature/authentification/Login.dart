@@ -56,7 +56,7 @@ class _LoginState extends State<Login> {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, AppRouter.forgotPassword);
+                  Navigator.pushNamed(context, '/forgot-password');
                 },
                 child: Text(
                   "Forgot Password?",
@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
               text: 'Sign In',
               onPressed: () {
                 box.write('email', emailController.text);
-                Navigator.pushNamedAndRemoveUntil(context, AppRouter.home, (_) => false);
+                Navigator.pushNamedAndRemoveUntil(context, '/bottom-navigation', (_) => false);
               },
             ),
           ],

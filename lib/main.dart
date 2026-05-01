@@ -1,19 +1,13 @@
-import 'package:examproject2/feature/authentification/ForgotPassword.dart';
-import 'package:examproject2/feature/authentification/Login.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:examproject2/feature/homescreen/HomeCubit.dart';
-import 'package:examproject2/feature/homescreen/HomeScreen.dart';
-import 'package:examproject2/feature/settings/AboutScreen.dart';
-import 'package:examproject2/feature/settings/AccountScreen.dart';
-import 'package:examproject2/feature/settings/ChangePasswordScreen.dart';
-import 'package:examproject2/feature/settings/SettingsScreen.dart';
-import 'package:examproject2/feature/settings/TermsConditionsScreen.dart';
-import 'package:examproject2/feature/widget/AppRouter.dart';
-import 'package:examproject2/feature/widget/BottomNavigationBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'feature/widget/AppRouter.dart';
+
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   runApp(
     MultiBlocProvider(
@@ -22,30 +16,35 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isConnected = true;
+  @override
+  void initState() {
+    super.initState();
+
+    Connectivity().onConnectivityChanged.listen((result) {
+      setState(() {
+        isConnected = result != ConnectivityResult.none;
+      });
+    });
+  }
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: AppRouter.home,
-      routes: {
-        AppRouter.forgotPassword: (context) => ForgotPassword(),
-        AppRouter.home: (context) => HomeScreen(),
-        AppRouter.login: (context) => Login(),
-        AppRouter.settings: (context) => SettingsScreen(),
-        AppRouter.changePassword: (context) => ChangePasswordScreen(),
-        AppRouter.about: (context) => AboutScreen(),
-        AppRouter.account: (context) => AccountScreen(),
-        AppRouter.terms: (context) => TermsConditionsScreen(),
-        AppRouter.bottomNavigation: (context) => BottomNavigationBarWidget(),
-      },
+      onGenerateRoute: AppRouter.onGenerateRoute,
       title: 'News App',
       theme: ThemeData(
         colorScheme: ColorScheme.light(),
         primaryColor: Colors.blueAccent
       ),
-      home: GetStorage().read('email') != null ? BottomNavigationBarWidget() : Login(),
+      initialRoute: GetStorage().read("email") != null ? '/bottom-navigation' : '/login',
       debugShowCheckedModeBanner: false,
     );
   }

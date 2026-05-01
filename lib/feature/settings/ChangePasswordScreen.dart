@@ -1,9 +1,6 @@
-import 'package:examproject2/feature/homescreen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../core/consts/AppColors.dart';
-import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
@@ -29,7 +26,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, AppRouter.home);
+              Navigator.pushNamed(context, '/home');
             },
             child: Text(
               "SAVE",

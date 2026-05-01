@@ -5,7 +5,7 @@ import '../model/NewsModel.dart';
 
 class ApiService {
   static final Dio dio = Dio();
-  static const String apiKey = '6f73201186f94fad9a34e7206d6fccd3';
+  static const String apiKey = '0590a514ed364c9bba00d78ecce5f7c7';
   static const String appleNewsUrl =
       'https://newsapi.org/v2/everything?q=apple&from=2026-04-28&to=2026-04-28&sortBy=popularity&apiKey=$apiKey';
   static const String teslaNewsUrl =

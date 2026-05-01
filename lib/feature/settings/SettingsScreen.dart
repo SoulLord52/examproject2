@@ -2,9 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../core/consts/AppColors.dart';
-import '../widget/AppRouter.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -20,6 +18,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           "Settings",
           style: GoogleFonts.acme(
@@ -35,7 +34,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           children: [
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, AppRouter.account);
+                Navigator.pushNamed(context, '/account');
               },
               child: Row(
                 children: [
@@ -101,7 +100,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             SizedBox(height: 10),
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, AppRouter.terms);
+                Navigator.pushNamed(context, '/terms');
               },
               child: Row(
                 children: [
@@ -137,7 +136,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             SizedBox(height: 10),
             InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, AppRouter.about);
+                  Navigator.pushNamed(context, '/about');
                 },
               child: Row(
                 children: [
@@ -170,7 +169,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             InkWell(
               onDoubleTap: () {
                 GetStorage().remove("email");
-                Navigator.pushNamedAndRemoveUntil(context, AppRouter.login, (_) => false);
+                Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
               },
               child: Row(
                 children: [

@@ -1,7 +1,9 @@
+import 'package:examproject2/feature/favorites/FavoritesScreen.dart';
 import 'package:examproject2/feature/homescreen/HomeScreen.dart';
 import 'package:examproject2/feature/settings/SettingsScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/consts/AppColors.dart';
 
@@ -16,10 +18,10 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
   int _selectedIndex = 0;
 
   late final List<Widget> _pages = [
-    const HomeScreen(),
-    const Center(child: Text('More Page')),
-    const Center(child: Text('Search Page')),
-    const SettingsScreen(),
+    HomeScreen(),
+    Center(child: Text('Search Page', style: GoogleFonts.workSans(fontWeight: FontWeight.bold, fontSize: 20),)),
+    FavoritesScreen(),
+    SettingsScreen(),
   ];
 
   @override

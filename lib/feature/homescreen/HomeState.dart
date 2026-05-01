@@ -1,3 +1,5 @@
+import '../../core/model/NewsModel.dart';
+
 abstract class HomeState {
   static bool isPasswordVisible = false;
   int newsIndex = 0;
@@ -14,5 +16,7 @@ class HomeErrorState extends HomeState {
 
 class HomeLoadedState extends HomeState {
   final newsModel;
-  HomeLoadedState({required this.newsModel});
+  final int index;
+  final List<Article> bookmarked;
+  HomeLoadedState({required this.newsModel,  required this.index, required this.bookmarked,});
 }

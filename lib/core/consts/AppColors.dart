@@ -13,4 +13,6 @@ class AppColors {
   static final Color grey = Color(0XFFFAFAFA);
   static final Color blueAccent = Color(0XFF448AFF);
   static final Color red = Color(0XFFF44336);
+  static final Color blue = Colors.blue;
+  static final Color grey2 = Color(0XFF909090);
 }

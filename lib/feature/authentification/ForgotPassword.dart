@@ -1,10 +1,7 @@
-import 'package:examproject2/feature/homescreen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../core/consts/AppColors.dart';
 import '../widget/AppButonWidget.dart';
-import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -58,7 +55,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               onPressed: () {
                 Navigator.pushNamedAndRemoveUntil(
                   context,
-                  AppRouter.forgotPassword,
+                  '/bottom-navigation',
                   (_) => false,
                 );
               },
