@@ -1,7 +1,9 @@
+import 'package:examproject2/feature/widget/AppBarWithoutLeadingWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/consts/AppColors.dart';
+import '../widget/AppBarWidget.dart';
 
 class TermsConditionsScreen extends StatefulWidget {
   const TermsConditionsScreen({super.key});
@@ -14,26 +16,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Terms & Conditions",
-          style: GoogleFonts.acme(
-            color: AppColors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-          ),
-        ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios_new_outlined,
-            size: 24,
-            color: AppColors.black,
-          ),
-        ),
-      ),
+      appBar: AppBarWidget(title: "Terms & Conditions",),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16),

@@ -58,7 +58,7 @@ class BookmarkWidget extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                article.title,
+                                article.title ?? "No title",
                                 maxLines: 4,
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.workSans(
@@ -80,7 +80,7 @@ class BookmarkWidget extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      article.source.name,
+                                      article.source?.name ?? "No name",
                                       style: GoogleFonts.workSans(
                                         fontWeight: FontWeight.w700,
                                         fontSize: 13,
@@ -93,7 +93,7 @@ class BookmarkWidget extends StatelessWidget {
                                   CircleAvatar(radius: 2),
                                   SizedBox(width: 5),
                                   Text(
-                                    '${article.publishedAt.minute}m ago',
+                                    '${article.publishedAt?.minute ?? "0"}m ago' ,
                                     style: GoogleFonts.workSans(
                                       fontSize: 13,
                                       color: AppColors.grey2,

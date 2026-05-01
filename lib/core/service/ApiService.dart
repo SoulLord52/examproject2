@@ -9,7 +9,7 @@ class ApiService {
   static const String appleNewsUrl =
       'https://newsapi.org/v2/everything?q=apple&from=2026-04-28&to=2026-04-28&sortBy=popularity&apiKey=$apiKey';
   static const String teslaNewsUrl =
-      'https://newsapi.org/v2/everything?q=tesla&from=2026-03-29&sortBy=publishedAt&apiKey=$apiKey';
+      'https://newsapi.org/v2/everything?q=tesla&from=2026-04-28&sortBy=publishedAt&apiKey=$apiKey';
   static const String topHeadlinesNewsUrl =
       'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=$apiKey';
 

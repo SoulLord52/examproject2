@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/consts/AppColors.dart';
+import '../widget/AppBarWidget.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -14,26 +15,7 @@ class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      title: Text(
-        "About",
-        style: GoogleFonts.acme(
-          color: AppColors.black,
-          fontWeight: FontWeight.bold,
-          fontSize: 22,
-        ),
-      ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios_new_outlined,
-            size: 24,
-            color: AppColors.black,
-          ),
-        ),
-      ),
+      appBar: AppBarWidget(title: "About",),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16),

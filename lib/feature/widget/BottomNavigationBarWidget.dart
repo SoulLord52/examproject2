@@ -19,7 +19,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
 
   late final List<Widget> _pages = [
     HomeScreen(),
-    Center(child: Text('Search Page', style: GoogleFonts.workSans(fontWeight: FontWeight.bold, fontSize: 20),)),
+    Center(child: Text('Search Page coming soon!', style: GoogleFonts.workSans(fontWeight: FontWeight.bold, fontSize: 20),)),
     FavoritesScreen(),
     SettingsScreen(),
   ];

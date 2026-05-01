@@ -19,8 +19,8 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         title: Image.asset("assets/images/title.png",
-          height: MediaQuery.of(context).size.height * 0.26,
-          width: MediaQuery.of(context).size.width * 0.26,
+          height: MediaQuery.of(context).size.height * 0.24,
+          width: MediaQuery.of(context).size.width * 0.24,
           fit: BoxFit.contain,
         ),
         automaticallyImplyLeading: false,
@@ -46,9 +46,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
-
-            const SizedBox(height: 27),
-
+            SizedBox(height: 24),
             Expanded(
               child: BlocBuilder<HomeCubit, HomeState>(
                 builder: (context, state) {

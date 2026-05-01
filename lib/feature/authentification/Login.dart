@@ -1,10 +1,9 @@
+import 'package:examproject2/feature/widget/LoginIconsWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../core/consts/AppColors.dart';
 import '../widget/AppButonWidget.dart';
-import '../widget/AppRouter.dart';
 import '../widget/CustomInputWidget.dart';
 
 class Login extends StatefulWidget {
@@ -36,7 +35,7 @@ class _LoginState extends State<Login> {
           children: [
             Image.asset(
               "assets/images/logo.png",
-              height: MediaQuery.of(context).size.height * 0.29,
+              height: MediaQuery.of(context).size.height * 0.30,
               width: MediaQuery.of(context).size.width * 0.29,
               fit: BoxFit.cover,
             ),
@@ -64,7 +63,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 80),
             AppButton(
               text: 'Sign In',
               onPressed: () {
@@ -72,6 +71,13 @@ class _LoginState extends State<Login> {
                 Navigator.pushNamedAndRemoveUntil(context, '/bottom-navigation', (_) => false);
               },
             ),
+            SizedBox(height: 15,),
+            Divider(),
+            SizedBox(height: 15,),
+            RowLoginWidget(),
+            Spacer(),
+            Text("By signing up to News24 you are accepting our", style: GoogleFonts.workSans(fontSize: 16, color: Colors.black),),
+            TextButton(onPressed: () {Navigator.pushNamed(context, '/terms');}, child:  Text("Terms & Conditions", textAlign: TextAlign.center, style: GoogleFonts.workSans(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),),
           ],
         ),
       ),

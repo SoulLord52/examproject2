@@ -16,11 +16,11 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Account",
+          "Change Password",
           style: GoogleFonts.acme(
             color: AppColors.black,
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: 20,
           ),
         ),
         actions: [

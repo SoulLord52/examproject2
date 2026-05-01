@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'feature/widget/AppRouter.dart';
-
+final GlobalKey<NavigatorState> _key = GlobalKey();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
@@ -30,14 +30,17 @@ class _MyAppState extends State<MyApp> {
     super.initState();
 
     Connectivity().onConnectivityChanged.listen((result) {
-      setState(() {
-        isConnected = result != ConnectivityResult.none;
-      });
+      if (result.contains(ConnectivityResult.none)) {
+        Navigator.pushNamed(_key.currentContext!, '/no_internet');
+      }else{
+        Navigator.pushNamedAndRemoveUntil(context, '/home', (_) => false);
+      }
     });
   }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: _key,
       onGenerateRoute: AppRouter.onGenerateRoute,
       title: 'News App',
       theme: ThemeData(

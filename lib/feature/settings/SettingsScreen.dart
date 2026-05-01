@@ -1,3 +1,4 @@
+import 'package:examproject2/feature/widget/AppBarWithoutLeadingWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
@@ -17,17 +18,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(
-          "Settings",
-          style: GoogleFonts.acme(
-            color: AppColors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
-        ),
-      ),
+      appBar: AppBarWithoutLeadingWidget(title: "Settings"),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(

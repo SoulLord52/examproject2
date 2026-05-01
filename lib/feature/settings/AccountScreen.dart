@@ -1,3 +1,4 @@
+import 'package:examproject2/feature/widget/AppBarWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
@@ -15,26 +16,7 @@ class _AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Account",
-          style: GoogleFonts.acme(
-            color: AppColors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
-        ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios_new_outlined,
-            size: 24,
-            color: AppColors.black,
-          ),
-        ),
-      ),
+      appBar: AppBarWidget(title: "Account",),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
